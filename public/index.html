@@ -1,0 +1,84 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Whack the Head — Final</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="center">
+    <header class="header">
+      <h1>Whack the Head</h1>
+      <div class="controls-top">
+        <button id="pauseBtn" class="btn" disabled>Pause</button>
+        <div class="mode-select">
+          <label for="mode">Mode:</label>
+          <select id="mode">
+            <option value="normal">Normal (15s)</option>
+            <option value="hard">Hard (10s, faster)</option>
+            <option value="endless">Endless (lives)</option>
+            <option value="kids">Kids (30s, slow)</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <section id="startMenu" class="menu">
+      <div class="menu-card">
+        <h2>Start Game</h2>
+        <p>Select mode and press Start. Background music: Dark / mysterious.</p>
+        <div class="menu-row">
+          <label for="difficulty">Difficulty scale:</label>
+          <input id="difficulty" type="range" min="0" max="2" value="1" />
+        </div>
+        <div class="menu-actions">
+          <button id="startBtn" class="btn primary">Start</button>
+        </div>
+        <div class="highscore">High Score: <span id="hsDisplay">0</span></div>
+      </div>
+    </section>
+
+    <div id="gameArea" class="hidden">
+      <div class="hud">
+        <div class="timer">Time: <span id="time">15</span>s</div>
+        <div class="score">Score: <span id="score">0</span></div>
+        <div class="lives">Lives: <span id="lives">3</span></div>
+        <div class="combo">Combo: x<span id="combo">1</span></div>
+      </div>
+
+      <div class="game-board" id="board" role="application" aria-label="Game board">
+        <div class="grid">
+          <!-- 9 holes -->
+          <div class="hole" data-index="0"><div class="well"><div class="water"></div><img class="head" src="assets/devil.png" alt="devil head"/><div class="hitText"></div></div></div>
+          <div class="hole" data-index="1"><div class="well"><div class="water"></div><img class="head" src="assets/devil.png" alt="devil head"/><div class="hitText"></div></div></div>
+          <div class="hole" data-index="2"><div class="well"><div class="water"></div><img class="head" src="assets/devil.png" alt="devil head"/><div class="hitText"></div></div></div>
+          <div class="hole" data-index="3"><div class="well"><div class="water"></div><img class="head" src="assets/devil.png" alt="devil head"/><div class="hitText"></div></div></div>
+          <div class="hole" data-index="4"><div class="well"><div class="water"></div><img class="head" src="assets/devil.png" alt="devil head"/><div class="hitText"></div></div></div>
+          <div class="hole" data-index="5"><div class="well"><div class="water"></div><img class="head" src="assets/devil.png" alt="devil head"/><div class="hitText"></div></div></div>
+          <div class="hole" data-index="6"><div class="well"><div class="water"></div><img class="head" src="assets/devil.png" alt="devil head"/><div class="hitText"></div></div></div>
+          <div class="hole" data-index="7"><div class="well"><div class="water"></div><img class="head" src="assets/devil.png" alt="devil head"/><div class="hitText"></div></div></div>
+          <div class="hole" data-index="8"><div class="well"><div class="water"></div><img class="head" src="assets/devil.png" alt="devil head"/><div class="hitText"></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="overlay" class="overlay hidden" role="dialog" aria-hidden="true">
+      <div class="overlay-content">
+        <h2 id="overlayTitle">Time's up!</h2>
+        <p>Your score: <span id="finalScore">0</span></p>
+        <p>High score: <span id="hsFinal">0</span></p>
+        <div class="overlay-actions">
+          <button id="replay" class="btn">Play Again</button>
+          <button id="menu" class="btn">Menu</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="credits">Click / Tap the head when it pops up. English language. </footer>
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
